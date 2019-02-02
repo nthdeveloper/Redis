@@ -41,6 +41,14 @@ namespace RedisClientSample
             }
         }
 
+        private void btnSimpleRemove_Click(object sender, EventArgs e)
+        {
+            using (IRedisClient client = getClient())
+            {
+                client.Remove(txtSimpleRemoveKey.Text);
+            }
+        }
+
         private void btnAddToList_Click(object sender, EventArgs e)
         {
             using (IRedisClient client = getClient())
@@ -65,11 +73,48 @@ namespace RedisClientSample
             }
         }
 
+        private void btnDeleteList_Click(object sender, EventArgs e)
+        {
+            using (IRedisClient client = getClient())
+            {
+                client.Remove(txtListName.Text);
+
+                //Another way
+                //var list = client.Lists[txtListName.Text];
+                //list.Clear();
+            }
+        }
+
+        private void btnRemoveFromList_Click(object sender, EventArgs e)
+        {
+            if (lbxListItems.SelectedItem != null)
+            {
+                using (IRedisClient client = getClient())
+                {
+                    var list = client.Lists[txtListName.Text];
+                    
+                    //Removes all the matching values
+                    list.RemoveValue((string)lbxListItems.SelectedItem);
+
+                    //Removes only the first matching value 
+                    //list.Remove((string)lbxListItems.SelectedItem);
+                }
+            }
+        }
+
         private void btnCreateCounter_Click(object sender, EventArgs e)
         {
             using (IRedisClient client = getClient())
             {
                 client.SetValue(txtCounterName.Text, txtCounterValue.Text);
+            }
+        }
+
+        private void btnDeleteCounter_Click(object sender, EventArgs e)
+        {
+            using (IRedisClient client = getClient())
+            {
+                client.Remove(txtCounterName.Text);
             }
         }
 
@@ -91,5 +136,7 @@ namespace RedisClientSample
                 txtCounterValue.Text = client.GetValue(txtCounterName.Text);
             }
         }
+
+        
     }
 }

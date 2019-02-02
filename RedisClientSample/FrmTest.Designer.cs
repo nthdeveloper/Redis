@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSimpleSet = new System.Windows.Forms.Button();
-            this.grpSimpleGetSet = new System.Windows.Forms.GroupBox();
             this.txtSimpleGetValue = new System.Windows.Forms.TextBox();
             this.txtSimpleGetKey = new System.Windows.Forms.TextBox();
             this.btnSimpleGet = new System.Windows.Forms.Button();
@@ -42,7 +41,6 @@
             this.txtRedisHost = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.grpList = new System.Windows.Forms.GroupBox();
             this.btnReadAllListItems = new System.Windows.Forms.Button();
             this.lbxListItems = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,7 +48,6 @@
             this.btnAddToList = new System.Windows.Forms.Button();
             this.txtListName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.grpIncrementDecrement = new System.Windows.Forms.GroupBox();
             this.btnDecrement = new System.Windows.Forms.Button();
             this.btnIncrement = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,59 +55,52 @@
             this.txtCounterValue = new System.Windows.Forms.TextBox();
             this.txtCounterName = new System.Windows.Forms.TextBox();
             this.btnCreateCounter = new System.Windows.Forms.Button();
-            this.grpSimpleGetSet.SuspendLayout();
+            this.txtSimpleRemoveKey = new System.Windows.Forms.TextBox();
+            this.btnSimpleRemove = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabSimpleGet = new System.Windows.Forms.TabPage();
+            this.tabList = new System.Windows.Forms.TabPage();
+            this.tabIncDec = new System.Windows.Forms.TabPage();
+            this.btnDeleteList = new System.Windows.Forms.Button();
+            this.btnRemoveFromList = new System.Windows.Forms.Button();
+            this.btnDeleteCounter = new System.Windows.Forms.Button();
             this.grpConnection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRedisPort)).BeginInit();
-            this.grpList.SuspendLayout();
-            this.grpIncrementDecrement.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabSimpleGet.SuspendLayout();
+            this.tabList.SuspendLayout();
+            this.tabIncDec.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSimpleSet
             // 
-            this.btnSimpleSet.Location = new System.Drawing.Point(6, 38);
+            this.btnSimpleSet.Location = new System.Drawing.Point(11, 27);
             this.btnSimpleSet.Name = "btnSimpleSet";
-            this.btnSimpleSet.Size = new System.Drawing.Size(51, 23);
+            this.btnSimpleSet.Size = new System.Drawing.Size(75, 23);
             this.btnSimpleSet.TabIndex = 0;
             this.btnSimpleSet.Text = "Set";
             this.btnSimpleSet.UseVisualStyleBackColor = true;
             this.btnSimpleSet.Click += new System.EventHandler(this.btnSimpleSet_Click);
             // 
-            // grpSimpleGetSet
-            // 
-            this.grpSimpleGetSet.Controls.Add(this.txtSimpleGetValue);
-            this.grpSimpleGetSet.Controls.Add(this.txtSimpleGetKey);
-            this.grpSimpleGetSet.Controls.Add(this.btnSimpleGet);
-            this.grpSimpleGetSet.Controls.Add(this.txtSimpleSetValue);
-            this.grpSimpleGetSet.Controls.Add(this.label4);
-            this.grpSimpleGetSet.Controls.Add(this.txtSimpleSetKey);
-            this.grpSimpleGetSet.Controls.Add(this.label3);
-            this.grpSimpleGetSet.Controls.Add(this.btnSimpleSet);
-            this.grpSimpleGetSet.Location = new System.Drawing.Point(12, 102);
-            this.grpSimpleGetSet.Name = "grpSimpleGetSet";
-            this.grpSimpleGetSet.Size = new System.Drawing.Size(366, 100);
-            this.grpSimpleGetSet.TabIndex = 1;
-            this.grpSimpleGetSet.TabStop = false;
-            this.grpSimpleGetSet.Text = "(2) Simple Set/Get";
-            // 
             // txtSimpleGetValue
             // 
-            this.txtSimpleGetValue.Location = new System.Drawing.Point(216, 64);
+            this.txtSimpleGetValue.Location = new System.Drawing.Point(221, 55);
             this.txtSimpleGetValue.Name = "txtSimpleGetValue";
             this.txtSimpleGetValue.Size = new System.Drawing.Size(140, 20);
             this.txtSimpleGetValue.TabIndex = 8;
             // 
             // txtSimpleGetKey
             // 
-            this.txtSimpleGetKey.Location = new System.Drawing.Point(65, 66);
+            this.txtSimpleGetKey.Location = new System.Drawing.Point(92, 55);
             this.txtSimpleGetKey.Name = "txtSimpleGetKey";
-            this.txtSimpleGetKey.Size = new System.Drawing.Size(140, 20);
+            this.txtSimpleGetKey.Size = new System.Drawing.Size(120, 20);
             this.txtSimpleGetKey.TabIndex = 7;
             // 
             // btnSimpleGet
             // 
-            this.btnSimpleGet.Location = new System.Drawing.Point(6, 64);
+            this.btnSimpleGet.Location = new System.Drawing.Point(11, 53);
             this.btnSimpleGet.Name = "btnSimpleGet";
-            this.btnSimpleGet.Size = new System.Drawing.Size(51, 23);
+            this.btnSimpleGet.Size = new System.Drawing.Size(75, 23);
             this.btnSimpleGet.TabIndex = 6;
             this.btnSimpleGet.Text = "Get";
             this.btnSimpleGet.UseVisualStyleBackColor = true;
@@ -118,7 +108,7 @@
             // 
             // txtSimpleSetValue
             // 
-            this.txtSimpleSetValue.Location = new System.Drawing.Point(216, 38);
+            this.txtSimpleSetValue.Location = new System.Drawing.Point(221, 29);
             this.txtSimpleSetValue.Name = "txtSimpleSetValue";
             this.txtSimpleSetValue.Size = new System.Drawing.Size(140, 20);
             this.txtSimpleSetValue.TabIndex = 5;
@@ -126,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(213, 22);
+            this.label4.Location = new System.Drawing.Point(218, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 4;
@@ -134,15 +124,15 @@
             // 
             // txtSimpleSetKey
             // 
-            this.txtSimpleSetKey.Location = new System.Drawing.Point(65, 40);
+            this.txtSimpleSetKey.Location = new System.Drawing.Point(92, 29);
             this.txtSimpleSetKey.Name = "txtSimpleSetKey";
-            this.txtSimpleSetKey.Size = new System.Drawing.Size(140, 20);
+            this.txtSimpleSetKey.Size = new System.Drawing.Size(120, 20);
             this.txtSimpleSetKey.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 24);
+            this.label3.Location = new System.Drawing.Point(90, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 13);
             this.label3.TabIndex = 1;
@@ -156,7 +146,7 @@
             this.grpConnection.Controls.Add(this.label1);
             this.grpConnection.Location = new System.Drawing.Point(12, 13);
             this.grpConnection.Name = "grpConnection";
-            this.grpConnection.Size = new System.Drawing.Size(311, 83);
+            this.grpConnection.Size = new System.Drawing.Size(214, 83);
             this.grpConnection.TabIndex = 2;
             this.grpConnection.TabStop = false;
             this.grpConnection.Text = "(1) Redis Server Connection";
@@ -204,25 +194,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Host";
             // 
-            // grpList
-            // 
-            this.grpList.Controls.Add(this.btnReadAllListItems);
-            this.grpList.Controls.Add(this.lbxListItems);
-            this.grpList.Controls.Add(this.label6);
-            this.grpList.Controls.Add(this.txtListNewItem);
-            this.grpList.Controls.Add(this.btnAddToList);
-            this.grpList.Controls.Add(this.txtListName);
-            this.grpList.Controls.Add(this.label5);
-            this.grpList.Location = new System.Drawing.Point(12, 208);
-            this.grpList.Name = "grpList";
-            this.grpList.Size = new System.Drawing.Size(366, 203);
-            this.grpList.TabIndex = 3;
-            this.grpList.TabStop = false;
-            this.grpList.Text = "(3) List";
-            // 
             // btnReadAllListItems
             // 
-            this.btnReadAllListItems.Location = new System.Drawing.Point(216, 146);
+            this.btnReadAllListItems.Location = new System.Drawing.Point(221, 135);
             this.btnReadAllListItems.Name = "btnReadAllListItems";
             this.btnReadAllListItems.Size = new System.Drawing.Size(140, 23);
             this.btnReadAllListItems.TabIndex = 10;
@@ -233,7 +207,7 @@
             // lbxListItems
             // 
             this.lbxListItems.FormattingEnabled = true;
-            this.lbxListItems.Location = new System.Drawing.Point(216, 19);
+            this.lbxListItems.Location = new System.Drawing.Point(221, 8);
             this.lbxListItems.Name = "lbxListItems";
             this.lbxListItems.Size = new System.Drawing.Size(140, 121);
             this.lbxListItems.TabIndex = 9;
@@ -241,7 +215,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 47);
+            this.label6.Location = new System.Drawing.Point(11, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 8;
@@ -249,14 +223,14 @@
             // 
             // txtListNewItem
             // 
-            this.txtListNewItem.Location = new System.Drawing.Point(65, 45);
+            this.txtListNewItem.Location = new System.Drawing.Point(70, 34);
             this.txtListNewItem.Name = "txtListNewItem";
             this.txtListNewItem.Size = new System.Drawing.Size(140, 20);
             this.txtListNewItem.TabIndex = 7;
             // 
             // btnAddToList
             // 
-            this.btnAddToList.Location = new System.Drawing.Point(65, 71);
+            this.btnAddToList.Location = new System.Drawing.Point(70, 60);
             this.btnAddToList.Name = "btnAddToList";
             this.btnAddToList.Size = new System.Drawing.Size(140, 23);
             this.btnAddToList.TabIndex = 5;
@@ -266,7 +240,7 @@
             // 
             // txtListName
             // 
-            this.txtListName.Location = new System.Drawing.Point(65, 19);
+            this.txtListName.Location = new System.Drawing.Point(70, 8);
             this.txtListName.Name = "txtListName";
             this.txtListName.Size = new System.Drawing.Size(140, 20);
             this.txtListName.TabIndex = 4;
@@ -274,31 +248,15 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 22);
+            this.label5.Location = new System.Drawing.Point(10, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "List Name";
             // 
-            // grpIncrementDecrement
-            // 
-            this.grpIncrementDecrement.Controls.Add(this.btnDecrement);
-            this.grpIncrementDecrement.Controls.Add(this.btnIncrement);
-            this.grpIncrementDecrement.Controls.Add(this.label8);
-            this.grpIncrementDecrement.Controls.Add(this.label7);
-            this.grpIncrementDecrement.Controls.Add(this.txtCounterValue);
-            this.grpIncrementDecrement.Controls.Add(this.txtCounterName);
-            this.grpIncrementDecrement.Controls.Add(this.btnCreateCounter);
-            this.grpIncrementDecrement.Location = new System.Drawing.Point(384, 102);
-            this.grpIncrementDecrement.Name = "grpIncrementDecrement";
-            this.grpIncrementDecrement.Size = new System.Drawing.Size(248, 171);
-            this.grpIncrementDecrement.TabIndex = 4;
-            this.grpIncrementDecrement.TabStop = false;
-            this.grpIncrementDecrement.Text = "(4) Increment/Decrement";
-            // 
             // btnDecrement
             // 
-            this.btnDecrement.Location = new System.Drawing.Point(65, 135);
+            this.btnDecrement.Location = new System.Drawing.Point(234, 36);
             this.btnDecrement.Name = "btnDecrement";
             this.btnDecrement.Size = new System.Drawing.Size(140, 23);
             this.btnDecrement.TabIndex = 9;
@@ -308,7 +266,7 @@
             // 
             // btnIncrement
             // 
-            this.btnIncrement.Location = new System.Drawing.Point(65, 106);
+            this.btnIncrement.Location = new System.Drawing.Point(234, 7);
             this.btnIncrement.Name = "btnIncrement";
             this.btnIncrement.Size = new System.Drawing.Size(140, 23);
             this.btnIncrement.TabIndex = 8;
@@ -319,7 +277,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 57);
+            this.label8.Location = new System.Drawing.Point(12, 41);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 7;
@@ -328,7 +286,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 27);
+            this.label7.Location = new System.Drawing.Point(12, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 6;
@@ -336,7 +294,7 @@
             // 
             // txtCounterValue
             // 
-            this.txtCounterValue.Location = new System.Drawing.Point(65, 50);
+            this.txtCounterValue.Location = new System.Drawing.Point(71, 34);
             this.txtCounterValue.Name = "txtCounterValue";
             this.txtCounterValue.Size = new System.Drawing.Size(140, 20);
             this.txtCounterValue.TabIndex = 5;
@@ -344,7 +302,7 @@
             // 
             // txtCounterName
             // 
-            this.txtCounterName.Location = new System.Drawing.Point(65, 24);
+            this.txtCounterName.Location = new System.Drawing.Point(71, 8);
             this.txtCounterName.Name = "txtCounterName";
             this.txtCounterName.Size = new System.Drawing.Size(140, 20);
             this.txtCounterName.TabIndex = 4;
@@ -352,34 +310,144 @@
             // 
             // btnCreateCounter
             // 
-            this.btnCreateCounter.Location = new System.Drawing.Point(65, 77);
+            this.btnCreateCounter.Location = new System.Drawing.Point(71, 61);
             this.btnCreateCounter.Name = "btnCreateCounter";
             this.btnCreateCounter.Size = new System.Drawing.Size(140, 23);
             this.btnCreateCounter.TabIndex = 1;
-            this.btnCreateCounter.Text = "Create";
+            this.btnCreateCounter.Text = "Create Counter";
             this.btnCreateCounter.UseVisualStyleBackColor = true;
             this.btnCreateCounter.Click += new System.EventHandler(this.btnCreateCounter_Click);
+            // 
+            // txtSimpleRemoveKey
+            // 
+            this.txtSimpleRemoveKey.Location = new System.Drawing.Point(92, 82);
+            this.txtSimpleRemoveKey.Name = "txtSimpleRemoveKey";
+            this.txtSimpleRemoveKey.Size = new System.Drawing.Size(120, 20);
+            this.txtSimpleRemoveKey.TabIndex = 10;
+            // 
+            // btnSimpleRemove
+            // 
+            this.btnSimpleRemove.Location = new System.Drawing.Point(11, 80);
+            this.btnSimpleRemove.Name = "btnSimpleRemove";
+            this.btnSimpleRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnSimpleRemove.TabIndex = 9;
+            this.btnSimpleRemove.Text = "Remove";
+            this.btnSimpleRemove.UseVisualStyleBackColor = true;
+            this.btnSimpleRemove.Click += new System.EventHandler(this.btnSimpleRemove_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabSimpleGet);
+            this.tabControl1.Controls.Add(this.tabList);
+            this.tabControl1.Controls.Add(this.tabIncDec);
+            this.tabControl1.Location = new System.Drawing.Point(11, 102);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(464, 201);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabSimpleGet
+            // 
+            this.tabSimpleGet.Controls.Add(this.txtSimpleRemoveKey);
+            this.tabSimpleGet.Controls.Add(this.btnSimpleSet);
+            this.tabSimpleGet.Controls.Add(this.btnSimpleRemove);
+            this.tabSimpleGet.Controls.Add(this.label3);
+            this.tabSimpleGet.Controls.Add(this.txtSimpleGetValue);
+            this.tabSimpleGet.Controls.Add(this.txtSimpleSetKey);
+            this.tabSimpleGet.Controls.Add(this.txtSimpleGetKey);
+            this.tabSimpleGet.Controls.Add(this.label4);
+            this.tabSimpleGet.Controls.Add(this.btnSimpleGet);
+            this.tabSimpleGet.Controls.Add(this.txtSimpleSetValue);
+            this.tabSimpleGet.Location = new System.Drawing.Point(4, 22);
+            this.tabSimpleGet.Name = "tabSimpleGet";
+            this.tabSimpleGet.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSimpleGet.Size = new System.Drawing.Size(456, 175);
+            this.tabSimpleGet.TabIndex = 0;
+            this.tabSimpleGet.Text = "(2) Simple Set/Get/Remove";
+            // 
+            // tabList
+            // 
+            this.tabList.Controls.Add(this.btnRemoveFromList);
+            this.tabList.Controls.Add(this.btnDeleteList);
+            this.tabList.Controls.Add(this.btnReadAllListItems);
+            this.tabList.Controls.Add(this.lbxListItems);
+            this.tabList.Controls.Add(this.label5);
+            this.tabList.Controls.Add(this.label6);
+            this.tabList.Controls.Add(this.txtListName);
+            this.tabList.Controls.Add(this.txtListNewItem);
+            this.tabList.Controls.Add(this.btnAddToList);
+            this.tabList.Location = new System.Drawing.Point(4, 22);
+            this.tabList.Name = "tabList";
+            this.tabList.Padding = new System.Windows.Forms.Padding(3);
+            this.tabList.Size = new System.Drawing.Size(456, 175);
+            this.tabList.TabIndex = 1;
+            this.tabList.Text = "(3) List";
+            // 
+            // tabIncDec
+            // 
+            this.tabIncDec.Controls.Add(this.btnDeleteCounter);
+            this.tabIncDec.Controls.Add(this.btnDecrement);
+            this.tabIncDec.Controls.Add(this.txtCounterName);
+            this.tabIncDec.Controls.Add(this.btnIncrement);
+            this.tabIncDec.Controls.Add(this.btnCreateCounter);
+            this.tabIncDec.Controls.Add(this.label8);
+            this.tabIncDec.Controls.Add(this.txtCounterValue);
+            this.tabIncDec.Controls.Add(this.label7);
+            this.tabIncDec.Location = new System.Drawing.Point(4, 22);
+            this.tabIncDec.Name = "tabIncDec";
+            this.tabIncDec.Size = new System.Drawing.Size(456, 175);
+            this.tabIncDec.TabIndex = 2;
+            this.tabIncDec.Text = "(4) Increment/Decrement";
+            // 
+            // btnDeleteList
+            // 
+            this.btnDeleteList.Location = new System.Drawing.Point(70, 89);
+            this.btnDeleteList.Name = "btnDeleteList";
+            this.btnDeleteList.Size = new System.Drawing.Size(140, 23);
+            this.btnDeleteList.TabIndex = 11;
+            this.btnDeleteList.Text = "Delete List";
+            this.btnDeleteList.UseVisualStyleBackColor = true;
+            this.btnDeleteList.Click += new System.EventHandler(this.btnDeleteList_Click);
+            // 
+            // btnRemoveFromList
+            // 
+            this.btnRemoveFromList.Location = new System.Drawing.Point(365, 8);
+            this.btnRemoveFromList.Name = "btnRemoveFromList";
+            this.btnRemoveFromList.Size = new System.Drawing.Size(76, 55);
+            this.btnRemoveFromList.TabIndex = 12;
+            this.btnRemoveFromList.Text = "Remove Selected Item";
+            this.btnRemoveFromList.UseVisualStyleBackColor = true;
+            this.btnRemoveFromList.Click += new System.EventHandler(this.btnRemoveFromList_Click);
+            // 
+            // btnDeleteCounter
+            // 
+            this.btnDeleteCounter.Location = new System.Drawing.Point(71, 90);
+            this.btnDeleteCounter.Name = "btnDeleteCounter";
+            this.btnDeleteCounter.Size = new System.Drawing.Size(140, 23);
+            this.btnDeleteCounter.TabIndex = 10;
+            this.btnDeleteCounter.Text = "Delete Counter";
+            this.btnDeleteCounter.UseVisualStyleBackColor = true;
+            this.btnDeleteCounter.Click += new System.EventHandler(this.btnDeleteCounter_Click);
             // 
             // FrmTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 423);
-            this.Controls.Add(this.grpIncrementDecrement);
-            this.Controls.Add(this.grpList);
+            this.ClientSize = new System.Drawing.Size(490, 314);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.grpConnection);
-            this.Controls.Add(this.grpSimpleGetSet);
             this.Name = "FrmTest";
             this.Text = "Redis Tests";
-            this.grpSimpleGetSet.ResumeLayout(false);
-            this.grpSimpleGetSet.PerformLayout();
             this.grpConnection.ResumeLayout(false);
             this.grpConnection.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRedisPort)).EndInit();
-            this.grpList.ResumeLayout(false);
-            this.grpList.PerformLayout();
-            this.grpIncrementDecrement.ResumeLayout(false);
-            this.grpIncrementDecrement.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabSimpleGet.ResumeLayout(false);
+            this.tabSimpleGet.PerformLayout();
+            this.tabList.ResumeLayout(false);
+            this.tabList.PerformLayout();
+            this.tabIncDec.ResumeLayout(false);
+            this.tabIncDec.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -387,7 +455,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSimpleSet;
-        private System.Windows.Forms.GroupBox grpSimpleGetSet;
         private System.Windows.Forms.TextBox txtSimpleGetValue;
         private System.Windows.Forms.TextBox txtSimpleGetKey;
         private System.Windows.Forms.Button btnSimpleGet;
@@ -400,7 +467,6 @@
         private System.Windows.Forms.TextBox txtRedisHost;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox grpList;
         private System.Windows.Forms.Button btnReadAllListItems;
         private System.Windows.Forms.ListBox lbxListItems;
         private System.Windows.Forms.Label label6;
@@ -408,7 +474,6 @@
         private System.Windows.Forms.Button btnAddToList;
         private System.Windows.Forms.TextBox txtListName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox grpIncrementDecrement;
         private System.Windows.Forms.Button btnDecrement;
         private System.Windows.Forms.Button btnIncrement;
         private System.Windows.Forms.Label label8;
@@ -416,6 +481,15 @@
         private System.Windows.Forms.TextBox txtCounterValue;
         private System.Windows.Forms.TextBox txtCounterName;
         private System.Windows.Forms.Button btnCreateCounter;
+        private System.Windows.Forms.TextBox txtSimpleRemoveKey;
+        private System.Windows.Forms.Button btnSimpleRemove;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabSimpleGet;
+        private System.Windows.Forms.TabPage tabList;
+        private System.Windows.Forms.TabPage tabIncDec;
+        private System.Windows.Forms.Button btnDeleteList;
+        private System.Windows.Forms.Button btnRemoveFromList;
+        private System.Windows.Forms.Button btnDeleteCounter;
     }
 }
 
