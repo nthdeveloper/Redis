@@ -41,6 +41,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnReadAllItems = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRemoveAll = new System.Windows.Forms.Button();
+            this.btnRemoveSelectedItem = new System.Windows.Forms.Button();
             this.dgvPerson = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,10 +50,8 @@
             this.btnGetById = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnRemoveSelectedItem = new System.Windows.Forms.Button();
             this.grpRemoveList = new System.Windows.Forms.GroupBox();
             this.btnDeleteType = new System.Windows.Forms.Button();
-            this.btnRemoveAll = new System.Windows.Forms.Button();
             this.grpConnection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRedisPort)).BeginInit();
             this.grpAdd.SuspendLayout();
@@ -125,7 +125,7 @@
             this.grpAdd.Controls.Add(this.label5);
             this.grpAdd.Location = new System.Drawing.Point(12, 101);
             this.grpAdd.Name = "grpAdd";
-            this.grpAdd.Size = new System.Drawing.Size(225, 110);
+            this.grpAdd.Size = new System.Drawing.Size(225, 143);
             this.grpAdd.TabIndex = 4;
             this.grpAdd.TabStop = false;
             this.grpAdd.Text = "(2) Add";
@@ -198,6 +198,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "(3) Retrieve";
             // 
+            // btnRemoveAll
+            // 
+            this.btnRemoveAll.Location = new System.Drawing.Point(191, 292);
+            this.btnRemoveAll.Name = "btnRemoveAll";
+            this.btnRemoveAll.Size = new System.Drawing.Size(163, 23);
+            this.btnRemoveAll.TabIndex = 14;
+            this.btnRemoveAll.Text = "Remove All";
+            this.btnRemoveAll.UseVisualStyleBackColor = true;
+            this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
+            // 
+            // btnRemoveSelectedItem
+            // 
+            this.btnRemoveSelectedItem.Location = new System.Drawing.Point(8, 292);
+            this.btnRemoveSelectedItem.Name = "btnRemoveSelectedItem";
+            this.btnRemoveSelectedItem.Size = new System.Drawing.Size(163, 23);
+            this.btnRemoveSelectedItem.TabIndex = 13;
+            this.btnRemoveSelectedItem.Text = "Remove Selected Item";
+            this.btnRemoveSelectedItem.UseVisualStyleBackColor = true;
+            this.btnRemoveSelectedItem.Click += new System.EventHandler(this.btnRemoveSelectedItem_Click);
+            // 
             // dgvPerson
             // 
             this.dgvPerson.AllowUserToAddRows = false;
@@ -266,22 +286,12 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Id";
             // 
-            // btnRemoveSelectedItem
-            // 
-            this.btnRemoveSelectedItem.Location = new System.Drawing.Point(8, 292);
-            this.btnRemoveSelectedItem.Name = "btnRemoveSelectedItem";
-            this.btnRemoveSelectedItem.Size = new System.Drawing.Size(163, 23);
-            this.btnRemoveSelectedItem.TabIndex = 13;
-            this.btnRemoveSelectedItem.Text = "Remove Selected Items";
-            this.btnRemoveSelectedItem.UseVisualStyleBackColor = true;
-            this.btnRemoveSelectedItem.Click += new System.EventHandler(this.btnRemoveSelectedItem_Click);
-            // 
             // grpRemoveList
             // 
             this.grpRemoveList.Controls.Add(this.btnDeleteType);
-            this.grpRemoveList.Location = new System.Drawing.Point(12, 217);
+            this.grpRemoveList.Location = new System.Drawing.Point(12, 250);
             this.grpRemoveList.Name = "grpRemoveList";
-            this.grpRemoveList.Size = new System.Drawing.Size(225, 130);
+            this.grpRemoveList.Size = new System.Drawing.Size(225, 97);
             this.grpRemoveList.TabIndex = 9;
             this.grpRemoveList.TabStop = false;
             this.grpRemoveList.Text = "(4) Delete Type";
@@ -296,21 +306,11 @@
             this.btnDeleteType.UseVisualStyleBackColor = true;
             this.btnDeleteType.Click += new System.EventHandler(this.btnDeleteType_Click);
             // 
-            // btnRemoveAll
-            // 
-            this.btnRemoveAll.Location = new System.Drawing.Point(191, 292);
-            this.btnRemoveAll.Name = "btnRemoveAll";
-            this.btnRemoveAll.Size = new System.Drawing.Size(163, 23);
-            this.btnRemoveAll.TabIndex = 14;
-            this.btnRemoveAll.Text = "Remove All";
-            this.btnRemoveAll.UseVisualStyleBackColor = true;
-            this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
-            // 
             // FrmTypedClientyTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 371);
+            this.ClientSize = new System.Drawing.Size(612, 361);
             this.Controls.Add(this.grpRemoveList);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpAdd);
