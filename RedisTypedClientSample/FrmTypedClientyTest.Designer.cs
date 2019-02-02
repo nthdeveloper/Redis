@@ -33,7 +33,7 @@
             this.txtRedisHost = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.grpList = new System.Windows.Forms.GroupBox();
+            this.grpAdd = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -41,18 +41,23 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnReadAllItems = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnGetById = new System.Windows.Forms.Button();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.dgvPerson = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGetById = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnRemoveSelectedItem = new System.Windows.Forms.Button();
+            this.grpRemoveList = new System.Windows.Forms.GroupBox();
+            this.btnDeleteType = new System.Windows.Forms.Button();
+            this.btnRemoveAll = new System.Windows.Forms.Button();
             this.grpConnection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRedisPort)).BeginInit();
-            this.grpList.SuspendLayout();
+            this.grpAdd.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).BeginInit();
+            this.grpRemoveList.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpConnection
@@ -111,19 +116,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Host";
             // 
-            // grpList
+            // grpAdd
             // 
-            this.grpList.Controls.Add(this.label6);
-            this.grpList.Controls.Add(this.txtSurname);
-            this.grpList.Controls.Add(this.btnAdd);
-            this.grpList.Controls.Add(this.txtName);
-            this.grpList.Controls.Add(this.label5);
-            this.grpList.Location = new System.Drawing.Point(12, 101);
-            this.grpList.Name = "grpList";
-            this.grpList.Size = new System.Drawing.Size(225, 203);
-            this.grpList.TabIndex = 4;
-            this.grpList.TabStop = false;
-            this.grpList.Text = "(2) Add";
+            this.grpAdd.Controls.Add(this.label6);
+            this.grpAdd.Controls.Add(this.txtSurname);
+            this.grpAdd.Controls.Add(this.btnAdd);
+            this.grpAdd.Controls.Add(this.txtName);
+            this.grpAdd.Controls.Add(this.label5);
+            this.grpAdd.Location = new System.Drawing.Point(12, 101);
+            this.grpAdd.Name = "grpAdd";
+            this.grpAdd.Size = new System.Drawing.Size(225, 110);
+            this.grpAdd.TabIndex = 4;
+            this.grpAdd.TabStop = false;
+            this.grpAdd.Text = "(2) Add";
             // 
             // label6
             // 
@@ -179,6 +184,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRemoveAll);
+            this.groupBox1.Controls.Add(this.btnRemoveSelectedItem);
             this.groupBox1.Controls.Add(this.dgvPerson);
             this.groupBox1.Controls.Add(this.btnGetById);
             this.groupBox1.Controls.Add(this.txtId);
@@ -186,10 +193,52 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(243, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 292);
+            this.groupBox1.Size = new System.Drawing.Size(360, 335);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "(3) Retrieve";
+            // 
+            // dgvPerson
+            // 
+            this.dgvPerson.AllowUserToAddRows = false;
+            this.dgvPerson.AllowUserToDeleteRows = false;
+            this.dgvPerson.AllowUserToOrderColumns = true;
+            this.dgvPerson.AllowUserToResizeRows = false;
+            this.dgvPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPerson.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colName,
+            this.colSurname});
+            this.dgvPerson.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPerson.Location = new System.Drawing.Point(8, 92);
+            this.dgvPerson.MultiSelect = false;
+            this.dgvPerson.Name = "dgvPerson";
+            this.dgvPerson.RowHeadersVisible = false;
+            this.dgvPerson.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPerson.ShowEditingIcon = false;
+            this.dgvPerson.Size = new System.Drawing.Size(346, 194);
+            this.dgvPerson.TabIndex = 12;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colSurname
+            // 
+            this.colSurname.DataPropertyName = "Surname";
+            this.colSurname.HeaderText = "Surname";
+            this.colSurname.Name = "colSurname";
+            this.colSurname.ReadOnly = true;
             // 
             // btnGetById
             // 
@@ -217,64 +266,66 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Id";
             // 
-            // dgvPerson
+            // btnRemoveSelectedItem
             // 
-            this.dgvPerson.AllowUserToAddRows = false;
-            this.dgvPerson.AllowUserToDeleteRows = false;
-            this.dgvPerson.AllowUserToOrderColumns = true;
-            this.dgvPerson.AllowUserToResizeRows = false;
-            this.dgvPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPerson.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colName,
-            this.colSurname});
-            this.dgvPerson.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvPerson.Location = new System.Drawing.Point(8, 92);
-            this.dgvPerson.Name = "dgvPerson";
-            this.dgvPerson.RowHeadersVisible = false;
-            this.dgvPerson.ShowEditingIcon = false;
-            this.dgvPerson.Size = new System.Drawing.Size(346, 194);
-            this.dgvPerson.TabIndex = 12;
+            this.btnRemoveSelectedItem.Location = new System.Drawing.Point(8, 292);
+            this.btnRemoveSelectedItem.Name = "btnRemoveSelectedItem";
+            this.btnRemoveSelectedItem.Size = new System.Drawing.Size(163, 23);
+            this.btnRemoveSelectedItem.TabIndex = 13;
+            this.btnRemoveSelectedItem.Text = "Remove Selected Items";
+            this.btnRemoveSelectedItem.UseVisualStyleBackColor = true;
+            this.btnRemoveSelectedItem.Click += new System.EventHandler(this.btnRemoveSelectedItem_Click);
             // 
-            // colId
+            // grpRemoveList
             // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
+            this.grpRemoveList.Controls.Add(this.btnDeleteType);
+            this.grpRemoveList.Location = new System.Drawing.Point(12, 217);
+            this.grpRemoveList.Name = "grpRemoveList";
+            this.grpRemoveList.Size = new System.Drawing.Size(225, 130);
+            this.grpRemoveList.TabIndex = 9;
+            this.grpRemoveList.TabStop = false;
+            this.grpRemoveList.Text = "(4) Delete Type";
             // 
-            // colName
+            // btnDeleteType
             // 
-            this.colName.DataPropertyName = "Name";
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
+            this.btnDeleteType.Location = new System.Drawing.Point(12, 40);
+            this.btnDeleteType.Name = "btnDeleteType";
+            this.btnDeleteType.Size = new System.Drawing.Size(193, 23);
+            this.btnDeleteType.TabIndex = 5;
+            this.btnDeleteType.Text = "Delete Person Type";
+            this.btnDeleteType.UseVisualStyleBackColor = true;
+            this.btnDeleteType.Click += new System.EventHandler(this.btnDeleteType_Click);
             // 
-            // colSurname
+            // btnRemoveAll
             // 
-            this.colSurname.DataPropertyName = "Surname";
-            this.colSurname.HeaderText = "Surname";
-            this.colSurname.Name = "colSurname";
-            this.colSurname.ReadOnly = true;
+            this.btnRemoveAll.Location = new System.Drawing.Point(191, 292);
+            this.btnRemoveAll.Name = "btnRemoveAll";
+            this.btnRemoveAll.Size = new System.Drawing.Size(163, 23);
+            this.btnRemoveAll.TabIndex = 14;
+            this.btnRemoveAll.Text = "Remove All";
+            this.btnRemoveAll.UseVisualStyleBackColor = true;
+            this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
             // 
             // FrmTypedClientyTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 313);
+            this.ClientSize = new System.Drawing.Size(612, 371);
+            this.Controls.Add(this.grpRemoveList);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.grpList);
+            this.Controls.Add(this.grpAdd);
             this.Controls.Add(this.grpConnection);
             this.Name = "FrmTypedClientyTest";
             this.Text = "Typed Client Test";
             this.grpConnection.ResumeLayout(false);
             this.grpConnection.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRedisPort)).EndInit();
-            this.grpList.ResumeLayout(false);
-            this.grpList.PerformLayout();
+            this.grpAdd.ResumeLayout(false);
+            this.grpAdd.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).EndInit();
+            this.grpRemoveList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -286,7 +337,7 @@
         private System.Windows.Forms.TextBox txtRedisHost;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox grpList;
+        private System.Windows.Forms.GroupBox grpAdd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Button btnAdd;
@@ -301,6 +352,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSurname;
+        private System.Windows.Forms.Button btnRemoveSelectedItem;
+        private System.Windows.Forms.GroupBox grpRemoveList;
+        private System.Windows.Forms.Button btnDeleteType;
+        private System.Windows.Forms.Button btnRemoveAll;
     }
 }
 
