@@ -76,7 +76,7 @@ namespace HashSample
             {
                 //Get the source object for this selected row. 
                 //DataBoundItem returns the source person object for the row 
-                KeyValuePair<string, string> item = (KeyValuePair<string, string>)dgvEntries.SelectedRows[0].DataBoundItem;
+                var item = (KeyValuePair<string, string>)dgvEntries.SelectedRows[0].DataBoundItem;
 
                 using (IRedisClient client = getClient())
                 {
