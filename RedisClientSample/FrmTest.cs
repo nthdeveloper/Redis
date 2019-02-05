@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ServiceStack.Logging;
 using ServiceStack.Redis;
 
 namespace RedisClientSample
@@ -18,6 +19,11 @@ namespace RedisClientSample
             InitializeComponent();
 
             IRedisClient client = new RedisClient();
+
+            LogManager.LogFactory = new GenericLogFactory((logMessage) =>
+            {
+                Console.WriteLine("REDIS LOG:" + logMessage);
+            });
         }
 
         private IRedisClient getClient()
