@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetSample", "SetSample\SetS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortedSetSample", "SortedSetSample\SortedSetSample.csproj", "{93EAA81F-7902-4D09-AA2E-089FA95FE679}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PubSubSample", "PubSubSample\PubSubSample.csproj", "{DD904168-BCE9-4CE5-9705-0EBC38F50EE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{93EAA81F-7902-4D09-AA2E-089FA95FE679}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93EAA81F-7902-4D09-AA2E-089FA95FE679}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93EAA81F-7902-4D09-AA2E-089FA95FE679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD904168-BCE9-4CE5-9705-0EBC38F50EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD904168-BCE9-4CE5-9705-0EBC38F50EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD904168-BCE9-4CE5-9705-0EBC38F50EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD904168-BCE9-4CE5-9705-0EBC38F50EE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
